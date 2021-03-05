@@ -6,13 +6,14 @@
   "author": "Guimarães Mahota <guimaraesmahota@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev --transpile-only src/server.ts",
+    "dev": "tsnd --transpile-only --ignore-watch node_modules src/server.ts",
     "start": "node dist/server.js",
     "deploy": "git add . && git commit -m 'Heroku' && git push heroku main",
     "build": "tsc",
-    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
-    "test": "jest",
-    "swagger-autogen": "node src/swagger.js"
+    "clean": "rm -rf ./dist",
+    "postinstall": "tsc",
+    "typeorm": "tsnd ./node_modules/typeorm/cli.js",
+    "migration-generate": "typeorm migration:generate -n"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.12.11",

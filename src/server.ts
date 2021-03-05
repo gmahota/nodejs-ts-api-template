@@ -4,7 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import "express-async-errors";
 
-import routes from "./routes";
+import routes from "./routes/routes";
 
 import errorHandler from "./errors/handler";
 

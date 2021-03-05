@@ -6,14 +6,9 @@ const signOptions: SignOptions = {
   expiresIn: config.jwt.duration,
 };
 
-const sign = (payload: any) => jwt.sign(payload, config.jwt.privateKey);
+const sign = (payload: any) => jwt.sign(payload, config.jwt.secret);
 
-const verify = (token: any) => {
-  jwt.verify(
-    token,
-    config.jwt.publicKey,
-  );
-};
+const verify = async (token: any) => jwt.verify(token, config.jwt.secret);
 
 export default {
   sign,
