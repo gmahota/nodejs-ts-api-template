@@ -1,1 +1,1 @@
-# agnuscrm-nodejs-api
+# nodejs-ts-api-template
